@@ -19,13 +19,14 @@ const fetcher = function(url, path) {
               const bytes = response.headers['content-length'];
               console.log(`Downloaded and saved ${bytes} bytes to ${path}`);
               process.exit()
+              return;
             })
           } else {
               process.exit()
           }
           rl.close();
         })
-     })
+    })
   })
 }
 
